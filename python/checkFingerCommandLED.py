@@ -124,6 +124,7 @@ with mp_hand.Hands(min_detection_confidence=0.5,
             creat condition to put text in frame
 
             """
+            
             if ((results.multi_hand_landmarks))!="None":
                 cv2.rectangle(image, (20, 300), (270, 425), (0, 255, 0), cv2.FILLED)
                 cv2.putText(image, str(total), (45, 375), cv2.FONT_HERSHEY_SIMPLEX,
