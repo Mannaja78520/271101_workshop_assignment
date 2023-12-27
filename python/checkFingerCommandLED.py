@@ -63,8 +63,6 @@ def led(ledCommand,led_1,led_2,led_3,led_4,led_5):#creat condition to controll d
     
 ######
 
-
-
 video=cv2.VideoCapture(int(cport)) #OpenCamera at index position 0
 
 with mp_hand.Hands(min_detection_confidence=0.5,
@@ -122,8 +120,6 @@ with mp_hand.Hands(min_detection_confidence=0.5,
                         fingers.append(0)
             total=fingers.count(1)
 
-            led(ledCommand,led_1,led_2,led_3,led_4,led_5) #import function in module to control arduino output
-            print(Hands)
             """
             creat condition to put text in frame
 
@@ -135,6 +131,8 @@ with mp_hand.Hands(min_detection_confidence=0.5,
                 cv2.putText(image, "LED", (100, 375), cv2.FONT_HERSHEY_SIMPLEX,
                     2, (255, 0, 0), 5)
 
+        led(ledCommand,led_1,led_2,led_3,led_4,led_5) #import function in module to control arduino output
+        # print(Hands)
 
         cv2.imshow("Frame",image)  #show edited image
         k=cv2.waitKey(1)
