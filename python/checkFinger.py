@@ -25,8 +25,6 @@ while True:
                 h, w, c = img.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
 
-                img.shape[1]
-                
                 if id == 3 and cx > handLms.landmark[4].y*h:
                     Nfing += 1
                     fingerstring += "Thumb "
@@ -37,13 +35,7 @@ while True:
                 if id%4 == 0 and id != 0 and Nfing != lastNfinger:
                     fingerstring += finger[int(id/4)] + " "
                 
-
-                
-
                 lastNfinger = Nfing
-              
-
-
 
             mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS)
 
@@ -57,6 +49,8 @@ while True:
                 (255, 0, 255), 2)
     cv2.imshow("Image", img)
     cv2.waitKey(1)
-
-# Close all open windows
-# cv2.destroyAllWindows()
+    k=cv2.waitKey(1)
+    if k==ord('q'):  #press "q" to exit programe
+        break
+img.release()
+cv2.destroyAllWindows()
