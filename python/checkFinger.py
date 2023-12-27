@@ -50,7 +50,7 @@ while True:
     cv2.imshow("Image", img)
     cv2.waitKey(1)
     k=cv2.waitKey(1)
-    if k==ord('q'):  #press "q" to exit programe
+    if k==ord('q'):
         break
 img.release()
 cv2.destroyAllWindows()
